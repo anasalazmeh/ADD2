@@ -4,6 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import logo from '../public/azam.png'
+import Link from "next/link";
 const Heading = () => {
   return (
     <nav>
@@ -28,7 +29,7 @@ const Heading = () => {
           </button>
         </div>
       </div>
-      <div className="navbar bg-white">
+      <div className="navbar bg-slate-100">
         <div className="navbar-start">
           <a className="btn btn-ghost hover:bg-white text-xl">
             <Image src={logo} alt="" width='80'/>
@@ -57,13 +58,13 @@ const Heading = () => {
               className="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <a>Homepage</a>
+                <Link href={'/'}>Homepage</Link>
               </li>
               <li>
                 <a>About</a>
               </li>
               <li>
-                <a>Product</a>
+                <Link href={'/product'}>Product</Link>
               </li>
             </ul>
           </div>
