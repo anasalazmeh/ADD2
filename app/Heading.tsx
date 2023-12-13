@@ -1,11 +1,13 @@
+'use client'
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import logo from '../public/azam.png'
 import Link from "next/link";
-const Heading = () => {
+const Heading = () => { 
+  const [isShow,setShow]=useState(false)
   return (
     <nav>
       <div className="navbar Green text-white">
@@ -37,7 +39,7 @@ const Heading = () => {
         </div>
         <div className="navbar-end ">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost btn-circle">
+            <label tabIndex={0} className="btn btn-ghost btn-circle" onClick={()=>setShow(true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -53,20 +55,20 @@ const Heading = () => {
                 />
               </svg>
             </label>
-            <ul
+            {isShow && <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
+              <li onClick={()=>setShow(false)}>
                 <Link href={'/'}>Homepage</Link>
               </li>
-              <li>
-                <a>About</a>
-              </li>
-              <li>
+              <li onClick={()=>setShow(false)}>
                 <Link href={'/product'}>Product</Link>
               </li>
-            </ul>
+              <li onClick={()=>setShow(false)}>
+                <Link href={'/payment'}>Payment</Link>
+              </li>
+            </ul>}
           </div>
         </div>
       </div>
