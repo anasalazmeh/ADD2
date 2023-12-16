@@ -5,6 +5,17 @@
 .Green{
   background-color: #708842;
 }
+.hover-Green:hover{
+  background-color: #708842;
+}
 .text-Green{
   color: #708842;
+}
+.h{
+  height: 500px;
+}
+@media (max-width:770px){
+  .h{
+      height: 250px;
+  }
 }
